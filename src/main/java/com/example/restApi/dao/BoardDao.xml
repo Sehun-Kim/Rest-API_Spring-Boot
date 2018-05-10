@@ -4,6 +4,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.example.restApi.dao.BoardDao">
+
+	<select id="boardCount" resultType="int">
+		SELECT COUNT(*) FROM BOARD
+	</select>
 	
 	<select id="boardDivision" resultType="com.example.restApi.dto.BoardDto">
         SELECT * FROM BOARD LIMIT #{startNum}, #{limit}
